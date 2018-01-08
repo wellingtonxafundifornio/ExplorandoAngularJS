@@ -1,0 +1,27 @@
+<!DOCTYPE html> <!-- Link: http://localhost:8080/ExplorandoAngularJS/exemplo-formatacao-moeda/formatacao-moeda.html -->
+<html ng-app="loja"> 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body id="corpo">
+
+<input type="text" ng-model="moeda">
+
+<h2>Moeada default : {{ moeda | currency: '$' }}</h2>
+
+
+<!-- A formatação ocorre de forma automatica por conta do angular-locale_pt-br.js. 
+Uma outra alternativa de formatação para a moeda brasileira é {{moeda | currency: 'R$' }} 
+que pode ser usada quando não se tem a biblioteca angular-locale_pt-br.js de configuração.
+
+Nota: Por default a localização configurada é '$' quando não se tem uma localização (angular-locale_pt-br.js)
+ configurada. E com a localização (angular-locale_pt-br.js) no projeto o detault é 'R$'-->
+<h2>Moeada Real Brasil : {{moeda | currency }}</h2> 
+
+<script type="text/javascript" src="../resources/static/angular/angular.min.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-route.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-locale_pt-br.js"></script>  
+<script type="text/javascript" src="../resources/script/controller-exemplo-formatacao-moeda.js"></script> <!-- Para trabalhar com animações do angular-->
+</body>
+</html>

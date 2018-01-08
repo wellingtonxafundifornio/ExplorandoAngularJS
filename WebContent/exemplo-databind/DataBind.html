@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body ng-init="meuNome='Wellington'; meuSobreNome='De Souza'">
+	<input type="text" ng-model="meuNome">
+	<input type="text" ng-model="meuSobreNome">
+	<br>
+	<h1>Olá: {{ meuNome }}</h1>
+	
+	<h1>Sobrenome: {{ meuSobreNome }}</h1>
+	
+<!-- CDN  
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+-->
+<script type="text/javascript" src="../resources/static/angular.min.js"></script>
+</body>
+</html>

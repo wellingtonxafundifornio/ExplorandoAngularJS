@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="loja"> 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body id="corpo">
+
+	<div ng-controller="localizacao">
+		<p>O url desta página é: </p>
+		<h3> {{ myUrl }} </h3>
+	</div>
+	
+	<div ng-controller="controllerTimeOut">
+		<p>Timeout services</p>
+		<h1> {{ timermsg }} </h1>
+	</div>
+	
+	<div ng-controller="controllerIntervalo">
+		<p>O tempo é: </p>
+		<h3> {{ intervalo }} </h3>
+	</div>
+	
+<script type="text/javascript" src="../resources/static/angular/angular.min.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-route.js"></script>
+<script type="text/javascript" src="../resources/script/controller-exemplo-services.js"></script>
+</body>
+</html>

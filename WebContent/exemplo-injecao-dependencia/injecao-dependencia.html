@@ -1,0 +1,41 @@
+<!DOCTYPE html> <!-- Link: http://localhost:8080/ExplorandoAngularJS/exemplo-injecao-dependencia/injecao-dependencia.html -->
+<html ng-app="loja"> 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body id="corpo">
+<style type="text/css">
+div {
+	transition: all linear 1s;  /* efeito na hora de aparecer e na hora de sumir*/
+	background-color: lightblue;
+	height: 100px;
+	width: 100%;
+	position: relative; /* Para centralizar a animação */
+	top: 0;
+	left: 0;
+}
+
+
+.ng-hide {
+	height: 0;
+	width: 0;
+	background-color: transparent;
+	top: -200px;
+	left: 200px;
+}
+</style>
+
+<div ng-controller="primeiroUserController">
+	<h1>{{ primeiro }}</h1>
+</div>
+
+<div ng-controller="todosUserController">
+	<h1>{{ todos }}</h1>
+</div>
+
+<script type="text/javascript" src="../resources/static/angular/angular.min.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-route.js"></script>
+<script type="text/javascript" src="../resources/script/controller-exemplo-injecao-de-dependencia.js"></script> <!-- Para trabalhar com animações do angular-->
+</body>
+</html>

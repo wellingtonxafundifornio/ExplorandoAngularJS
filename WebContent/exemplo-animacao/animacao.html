@@ -1,0 +1,46 @@
+<!DOCTYPE html> <!-- References: https://www.w3schools.com/angular/angular_animations.aspp -->
+<html ng-app="loja">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+div {
+	transition: all linear 1s;  /* efeito na hora de aparecer e na hora de sumir*/
+	background-color: lightblue;
+	height: 100px;
+	width: 100%;
+	position: relative; /* Para centralizar a animação */
+	top: 0;
+	left: 0;
+}
+
+
+.ng-hide {
+	height: 0;
+	width: 0;
+	background-color: transparent;
+	top: -200px;
+	left: 200px;
+}
+</style>
+</head>
+<body id="corpo">
+
+<h1>
+Hide the DIV:
+<input type="checkbox" ng-model="myCheck"> 
+</h1>
+
+<div ng-hide="myCheck"> <!-- mostra/escode a <div> de acordo com o valor recebido do checkbox myCheck  -->
+
+</div>
+
+<script type="text/javascript" src="../resources/static/angular/angular.min.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-route.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-resource.js"></script>
+<!-- Animações são atribuir algum movimento a um elemento HTML. Normalmente contruidas com CSS -->
+<script type="text/javascript" src="../resources/static/angular/angular-animate.js"></script>
+<script type="text/javascript" src="../resources/script/controller-exemplo-animacoes.js"></script> <!-- Para trabalhar com animações do angular-->
+</body>
+</html>

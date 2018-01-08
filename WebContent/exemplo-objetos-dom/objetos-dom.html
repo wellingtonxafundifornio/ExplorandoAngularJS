@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="loja"> 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body id="corpo">
+
+<div ng-init="mySwitch=true">
+	<p>
+		<button ng-disabled="mySwitch" >Click Me!</button>
+	</p>
+	
+	<p>
+		<input type="checkbox" ng-model="mySwitch">Button
+	</p>
+	
+	<p> {{ mySwitch }} </p>
+	
+	<br><br><br>
+	
+	<p ng-show="true">Mostrando</p>
+	<p ng-show="false">Escondeu</p>
+		
+</div>
+
+<br><br><br>
+
+<div ng-init="hour=13">
+	<p ng-show="hour > 12">Mostrando</p>
+	<p ng-show="hour < 12">Escondeu</p>
+</div>
+	
+<script type="text/javascript" src="../resources/static/angular/angular.min.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-route.js"></script>
+<script type="text/javascript" src="../resources/script/controller-exemplo-select-combobox.js"></script> 
+</body>
+</html>

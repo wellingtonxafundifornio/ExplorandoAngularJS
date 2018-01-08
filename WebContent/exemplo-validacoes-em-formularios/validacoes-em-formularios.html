@@ -1,0 +1,86 @@
+<!DOCTYPE html> <!-- References: https://www.w3schools.com/angular/angular_events.asp -->
+<html ng-app="loja"> 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body id="corpo">
+
+<form>
+	Select a topic:
+	<select ng-model="myVar">
+		<option value="Selecione">
+		<option value="dogs">Dogs
+		<option value="tutorials">Tutorials
+		<option value="cars">Cars
+	</select>
+</form>
+
+<div ng-switch="myVar">
+	<div ng-switch-when="dogs">
+		<h1>Dogs</h1>
+		<p>Selecionou dogs</p>
+	</div>
+	<div ng-switch-when="tutorials">
+		<h1>Tutorials</h1>
+		<p>Selecionou Tutorials</p>
+	</div>
+	<div ng-switch-when="cars">
+		<h1>Cars</h1>
+		<p>Selecionou cars</p>
+	</div>
+</div>
+
+<br><br><br>
+
+<div ng-controller="formCtrl">
+	<form novalidate> <!-- novalidate: Retira todas as validações. Nesse caso validações do formulário dentro da tag <form> -->
+		First Name:<br>
+		<input type="text" ng-model="user.firstName"><br>
+		Last Name:<br>
+		<input type="text" ng-model="user.lastName">
+		<br><br>
+		<button ng-click="reseta();">Reset</button>
+	</form>
+		<p>form = {{ user }}</p>
+		<p>master = {{ master }}</p>    
+</div>
+
+<br><br><br>
+
+<h2>Formulário abaixo</h2>
+<form name="myForm">
+	<input name="myInput" ng-model="myInput" required="required" placeholder="nome">
+	
+	<input type="email" name="email" ng-model="email" placeholder="e-mail">
+</form>
+
+<p>Verificando se o campo nome foi preenchido:</p>
+<!-- Para que a validação funcione com o angularjs  é necessário que o input tenha um name igual a variavel ng-model do angular -->
+<h1> {{myForm.myInput.$valid}} </h1>
+
+<p>Verificando se email é valido:</p>
+<h1> {{myForm.email.$valid}} </h1>
+
+
+<br><br><br>
+
+<form name="myForm2">
+	<p>Name: 
+		<input name="myName" ng-model="myName" required>
+		<span ng-show="myForm2.myName.$touched && myForm2.myName.$invalid">Nome obrigatório</span>
+	</p>
+	<p>Address:
+		<input name="myAddress" ng-model="myAddress" required>
+		<span ng-show="myForm2.myAddress.$touched && myForm2.myAddress.$invalid">E-mail obrigatório</span>
+	</p>
+	
+</form>
+
+<script type="text/javascript" src="../resources/static/angular/angular.min.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-route.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-resource.js"></script>
+<script type="text/javascript" src="../resources/script/controller-exemplo-validacoes-em-formularios.js"></script> 
+</body>
+</html>

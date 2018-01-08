@@ -1,0 +1,85 @@
+<!DOCTYPE html> <!-- References: https://www.w3schools.com/angular/angular_animations.aspp -->
+<html ng-app="loja"> 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body id="corpo">
+
+<div>
+<label>Consulta: <input type="text" ng-model="criterio"> </label>
+</div>
+	
+<div ng-controller="filterController">
+	<table>
+		<thead>
+			<th>Nome</th>
+			<th>Sobrenome</th>
+			<th>Idade</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="friend in friends | filter:criterio">
+				<td>{{ friend.name }}</td>
+				<td>{{ friend.lastName }}</td>
+				<td>{{ friend.age }}</td>
+			</tr>
+		</tbody>
+		
+	</table>
+</div>
+
+<br><br>
+
+<p>Filtrando somente pela coluna <b>Nome </b></p>
+
+<div>
+<label>Consulta pela coluna Nome: <input type="text" ng-model="criterio"> </label>
+</div>
+<div ng-controller="filterController">
+	<table>
+		<thead>
+			<th>Nome</th>
+			<th>Sobrenome</th>
+			<th>Idade</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="friend in friends | filter:{name:criterio}">
+				<td>{{ friend.name }}</td>
+				<td>{{ friend.lastName }}</td>
+				<td>{{ friend.age }}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<br><br>
+
+<div>
+<label>Consulta pela coluna 'Nome' com um totalizador abaixo: <input type="text" ng-model="criterio"> </label>
+</div>
+<div ng-controller="filterController">
+	<table>
+		<thead>
+			<th>Nome</th>
+			<th>Sobrenome</th>
+			<th>Idade</th>
+		</thead>
+		<tbody>
+			<!-- Filtrando os resultados pelo 'nome' e passando para variavel 'resultQtd' e depois 
+		interando em 'resulttd' e colocando o resultado em friend -->
+			<tr ng-repeat="friend in resultQtd = (friends | filter:{name:criterio})">
+				<td>{{ friend.name }}</td>
+				<td>{{ friend.lastName }}</td>
+				<td>{{ friend.age }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<!-- Total de resultados que 'resultQtd' recebeu -->
+	<h1>Total resultado: {{ resultQtd.length }}</h1>
+</div>
+
+<script type="text/javascript" src="../resources/static/angular/angular.min.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-route.js"></script>
+<script type="text/javascript" src="../resources/script/controller-filter-em-tabelas.js"></script> <!-- Para trabalhar com animações do angular-->
+</body>
+</html>

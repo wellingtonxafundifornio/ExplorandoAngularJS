@@ -1,0 +1,127 @@
+<!DOCTYPE html> <!-- References: https://www.w3schools.com/angular/angular_animations.aspp -->
+<html ng-app="loja"> 
+<head>
+	<meta charset="UTF-8">
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+	<title>Insert title here</title>
+	
+	<!-- Bibliotecas CSS layout-bootstrap-->
+    <!-- Animation library for notifications   -->
+    <link href="resources/static/layout-bootstrap/css/animate.min.css" rel="stylesheet"/>
+    <!-- Bootstrap core CSS -->
+    <link href="resources/static/layout-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="resources/static/layout-bootstrap/css/demo.css" rel="stylesheet" />
+    <link href="resources/static/layout-bootstrap/css/paper-dashboard.css" rel="stylesheet" />
+    <!--     Fonts and icons     -->
+    <link href="resources/static/layout-bootstrap/css/font-awesome.min.css" rel="stylesheet">
+    <link href="resources/static/layout-bootstrap/css/css.css" rel="stylesheet">
+    <link href="resources/static/layout-bootstrap/css/themify-icons.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar" data-background-color="white" data-active-color="danger">
+
+    <!--
+		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
+		Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+	-->
+
+    	<div class="sidebar-wrapper">
+            <ul class="nav">
+                <li class="active">
+                    <a href="#!clientelist">
+                        <p>Clientes</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="user.html">
+                        <p>User Profile</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="table.html">
+                        <p>Table List</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="typography.html">
+                        <p>Typography</p>
+                    </a>
+                </li>
+            </ul>
+    	</div>
+    </div>
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Home</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									<p>Cadastros</p>
+									<b class="caret"></b>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Notification 1</a></li>
+                                <li><a href="#">Notification 2</a></li>
+                                <li><a href="#">Notification 3</a></li>
+                                <li><a href="#">Notification 4</a></li>
+                                <li><a href="#">Another notification</a></li>
+                              </ul>
+                        </li>
+						<li>
+                            <a href="#">
+								<p>Sair</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <div ng-controller="clienteController" class="content" ng-view>
+            <div class="container-fluid">
+
+            </div>
+        </div>
+        <p>
+		                Este projeto contem varios exemplos simples sobre conceitos do AngularJS e um layout iniciado e configurado. 
+		                </p>
+		                <h3>Atenção: Sobre o layout, somente o link de <b>CLIENTES</b> está funcionando!</h3>
+                	
+    </div>
+</div>
+
+
+</body>
+
+	<script type="text/javascript" src="resources/static/layout-bootstrap/js/jquery-1.10.2.js"></script>
+
+	<!-- Bibliotecas AngularJS -->
+	<script type="text/javascript" src="resources/static/angular/angular.min.js"></script>
+	<script type="text/javascript" src="resources/static/angular/angular-route.js"></script>
+	<script type="text/javascript" src="resources/static/angular/angular-resource.js"></script>
+	<script type="text/javascript" src="resources/static/angular/angular-animate.js"></script>
+	<script type="text/javascript" src="resources/static/angular/angular-locale_pt-br.js"></script>
+	
+	<!-- Bibliotecas JavaScripts layout-bootstrap -->
+	<script type="text/javascript" src="resources/static/layout-bootstrap/js/bootstrap-checkbox-radio.js"></script>
+	<script type="text/javascript" src="resources/static/layout-bootstrap/js/bootstrap-notify.js"></script>
+	<script type="text/javascript" src="resources/static/layout-bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="resources/static/layout-bootstrap/js/chartist.min.js"></script>
+	<script type="text/javascript" src="resources/static/layout-bootstrap/js/demo.js"></script>
+	<script type="text/javascript" src="resources/static/layout-bootstrap/js/paper-dashboard.js"></script>
+	
+		<!-- Controller -->
+	 <script type="text/javascript" src="resources/script/app.js"></script>
+	
+</html>

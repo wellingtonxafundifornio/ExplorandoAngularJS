@@ -1,0 +1,43 @@
+<!DOCTYPE html> <!-- References: https://www.w3schools.com/angular/angular_events.asp -->
+<html ng-app="loja"> 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body id="corpo">
+
+<h1 ng-mousemove="count = count + 1">Mouse over me!</h1>
+<h2> {{ count }} </h2>
+
+<button ng-click="count2 = count2 + 1">Click me!</button>
+
+<p> {{ count2 }} </p>
+
+<div ng-controller="controllerClickMe">
+
+	<button ng-click="myFunc();">Click me!</button>
+	
+	<div ng-show="showMe">
+		<h1>Menu:</h1>
+		<div>Pizza</div>
+		<div>Pasta</div>
+		<div>Refrigerante</div>
+	</div>
+</div>
+
+<div ng-controller="controllerCordinates">
+
+	<h1 ng-mousemove="myFunc($event)">Mouse over me Cordinates!</h1>
+	
+	
+	<p>Cordinates: {{x +' '+ y}}</p>
+
+</div>
+
+<script type="text/javascript" src="../resources/static/angular/angular.min.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-route.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-resource.js"></script>
+<script type="text/javascript" src="../resources/script/controller-exemplo-eventos.js"></script> 
+</body>
+</html>

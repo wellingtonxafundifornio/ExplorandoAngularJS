@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="loja"> 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body id="corpo">
+
+<div ng-controller="namesController">
+<!-- 'selectedName' é uma palavra reservada  -->
+	<select ng-model="selectedName" ng-options="x for x in names"></select>
+</div>
+
+<br>
+<br>
+<br>
+
+
+<div ng-controller="namesController">
+	<select>
+		<option ng-repeat="x in names"> {{ x }} </option>
+	 </select>
+</div>
+
+<div ng-controller="pegarRespostaJson">
+
+	<p>Selecione o nome:</p>
+	
+	<select ng-model="nomeSelecionado">
+		<option ng-repeat="x in lista" value="{{ x.nome }}">  {{ x.nome }} </option>
+	 </select>
+	 
+	 <h1>Selecionado: {{ nomeSelecionado }}</h1>
+</div>
+
+<div ng-controller="pegarRespostaJson">
+	
+	<p>Selecione o nome:</p>
+	
+	<select ng-model="selecionado" ng-options="x for (x, y) in lista"></select>
+	
+	<h1>Nome: {{ selecionado.nome }}</h1>
+	<h2>Cidade: {{ selecionado.cidade }}</h2>
+</div>
+
+	
+<script type="text/javascript" src="../resources/static/angular/angular.min.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-route.js"></script>
+<script type="text/javascript" src="../resources/script/controller-exemplo-select-combobox.js"></script> 
+</body>
+</html>

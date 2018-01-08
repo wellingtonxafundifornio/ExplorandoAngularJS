@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="loja"> 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body id="corpo">
+
+	<p>Trabalhando com o servidor 1</p>
+	<button ng-controller="pegarResposta" ng-click="pegarResposta();">Pegar Resposta Servidor</button>
+	<input type="text" id="resposta" style="width: 300px">
+	
+	<p>Trabalhando com o servidor 2</p>
+	<button ng-controller="pegarResposta2" ng-click="pegarResposta2();">Pegar Resposta Servidor</button>
+	<input type="text" id="resposta2" style="width: 300px">
+	<input type="text" id="resposta3" style="width: 100px">
+	<input type="text" id="resposta4" style="width: 100px">
+	
+	<p>Trabalhando com <b>Erros do Servidor</b></p>
+	<button ng-controller="pegarRespostaErro" ng-click="pegarRespostaErro();">Pegar Resposta Servidor</button>
+	<input type="text" id="respostaErro" style="width: 300px">
+	
+	<p>Trabalhando com o <b>Retorno de JSON do servidor</b></p>
+	<div ng-controller="pegarRespostaJson">
+		<ul>
+			<li ng-repeat="x in lista">{{ x.nome +' '+ x.cidade }}</li>
+		</ul>
+	</div>
+	
+<script type="text/javascript" src="../resources/static/angular/angular.min.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-route.js"></script>
+<script type="text/javascript" src="../resources/script/controller-exemplo-http-ajax.js"></script>
+</body>
+</html>

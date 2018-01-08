@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="loja"> 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body id="corpo">
+
+	<h1>Expressões 1</h1>
+	<p>{{ 2 + 16 }}</p>
+	
+	<h1>Expressões 2</h1>
+	<div ng-init="myCol='red'">
+		<input style="background: {{myCol}}" ng-model="myCol" value="myCol">
+	</div>
+	
+	<h1>Expressões 3</h1>
+	<div ng-init="valor=2; cota=5">
+		<p>Total in dollar: {{valor * cota}}</p>
+	</div>
+	
+	<h1>Expressões 4</h1>
+	<div ng-init="quantity=1; cost=5"> <!-- ng-bind é outra alternativa a interpolação {{ }} -->
+		<p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
+	</div>
+	
+	<h1>Expressões 5 <b>strings</b></h1>
+	<div ng-init="firstName='John'; lastName='Doe'">
+		<p>Meu nome é {{ firstName +" "+ lastName }} </p>
+	</div>
+	
+	<div ng-init="firstName='John'; lastName='Doe'"> <!-- ng-bind tem o mesmo efeito que {{ }}  -->
+		<p>Meu nome é <span ng-bind="firstName +' '+ lastName"></span></p>
+	</div>
+	
+	<h1>AngularJS Objects</h1>
+	<div ng-init="pessoa={primeiroNome: 'Maria', sobreNome: 'Flor'}">
+		<p>O nome dela é {{ pessoa.primeiroNome +' '+ pessoa.sobreNome }}</p>
+	</div>
+	
+	<div ng-init="person={nome: 'John', sobreNome: 'Deep'}">
+		<p>O nome dele é <span ng-bind="person.nome +' '+ person.sobreNome"></span></p>
+	</div>
+
+	<h1>AngularJS Arrays</h1>
+	<div ng-init="points=[1,15,19,2,40]">
+		<p>Array {{ points }}</p>
+		<p>Array na posiçao[2] = {{ points[2] }}</p>
+	</div>
+	
+	<div ng-init="points=[1,15,19,2,40]">
+		<p>Array {{ points }}</p>
+		<p>Array na posiçao[2] + 3 = <span ng-bind="points[2] + 3"></span></p>
+	</div>
+	
+	<div>
+		<p>{{  }}</p>
+	</div>
+	
+	<h1>Expressões 9</h1>
+	<p>{{  }}</p>
+	
+	<h1>Expressões 10</h1>
+	<p>{{  }}</p>
+	
+<script type="text/javascript" src="../resources/static/angular/angular.min.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-route.js"></script>
+<script type="text/javascript" src="../resources/script/primeiroController.js"></script>
+</body>
+</html>

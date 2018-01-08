@@ -1,0 +1,22 @@
+<!DOCTYPE html> <!-- http://localhost:8080/ExplorandoAngularJS/exemplo-directivas/directive.html -->
+<html ng-app="loja"> 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body id="corpo">
+
+<div w3-test-directive></div>
+
+<form action="myForm">
+	Email:
+	<input type="email" name="myAddress" ng-model="text">
+	<span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+</form>
+	
+<script type="text/javascript" src="../resources/static/angular/angular.min.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-route.js"></script>
+<script type="text/javascript" src="../resources/script/controller-exemplo-directive.js"></script>
+</body>
+</html>

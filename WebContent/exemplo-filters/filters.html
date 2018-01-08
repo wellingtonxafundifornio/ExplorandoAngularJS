@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="loja"> 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body id="corpo">
+
+	<div ng-controller="personCtrl">
+		<p>O nome é {{ lastName | uppercase }} </p>
+		<p>O nome é {{ lastName | lowercase }} </p>
+	</div>
+	
+	<div ng-controller="namesCtrl">
+	
+		<p>Loop em objetos:</p>
+		<ul> <!-- orderBy: Ordena por uma propriedade do JSON/OBJ (names.country). Nota: Pode-se ordernar por qualquerr propriedade do JSON -->
+			<li ng-repeat="x in names | orderBy: 'country'">{{ x.name +' '+ x.country}} </li>
+		</ul>
+	</div>
+	
+	<div ng-controller="costCtrl">
+		<h1>Preço: {{ (price * 2) | currency }}</h1>
+	</div>
+	
+	<div ng-controller="namesCtrl2">
+		<ul> <!-- orderBy: Ordena por uma propriedade do JSON/OBJ (names.country). Nota: Pode-se ordernar por qualquerr propriedade do JSON -->
+			<li ng-repeat="x in names | filter : 'i'">{{ x }} </li>
+		</ul>
+	</div>
+	
+	<div ng-controller="namesCtrl3">
+		<input type="text" ng-model="input"> <!-- as letras digitadas no input são usadas como filtro sobre o array 'names' do  namesCtrl3-->
+		<ul> 
+			<li ng-repeat="x in names | filter :input">{{ x }} </li> <!-- Nota: filter:input (variavel do ng-model) -->
+		</ul>
+	</div>
+	
+	<p>Clica no cabeçalho e ordena</p>
+	<div ng-controller="namesCtrl4">
+		<table border="1" width="100%">
+			<tr>
+				<th ng-click="orderByMe('name')">Name</th>
+				<th ng-click="orderByMe('country')">Country</th>
+			</tr>
+			<tr ng-repeat="x in names | orderBy: myOrderBy">
+				<th>{{ x.name }}</th>
+				<th>{{ x.country }}</th>
+			</tr>
+		</table>
+	</div>
+	
+<script type="text/javascript" src="../resources/static/angular/angular.min.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-route.js"></script>
+<script type="text/javascript" src="../resources/script/controller-exemplo-filters.js"></script>
+</body>
+</html>

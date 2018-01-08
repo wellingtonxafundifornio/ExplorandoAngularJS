@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="loja"> 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+
+<style>
+	.table-css tr:nth-child(even){background-color: #f2f2f2;}
+	.table-css tr:hover {background-color: #ddd;}
+	.table-css {
+	 	border: 1px solid #ddd;
+    	padding: 8px;
+	}
+
+</style>
+<body id="corpo">
+
+	<div ng-controller="pegarRespostaJson">
+		<table class="table-css">
+			<tr ng-repeat="x in lista">
+				<td>{{ x.nome }}</td>
+				<td>{{ x.cidade }}</td>
+			</tr>
+		</table>
+	</div>
+	
+	<br>
+	<br>
+	<br><br>
+	
+	<div ng-controller="pegarRespostaJson">
+		<table class="table-css">
+			<tr ng-repeat="x in lista | orderBy : 'cidade'">
+				<td>{{ x.nome }}</td>
+				<td>{{ x.cidade }}</td>
+			</tr>
+		</table>
+	</div>
+	
+	<br>
+	<br>
+	<br><br>
+	
+	<h2>Dados maiusculo</h2>
+	<div ng-controller="pegarRespostaJson">
+		<table class="table-css">
+			<tr ng-repeat="x in lista">
+				<td>{{ x.nome }}</td>
+				<td>{{ x.cidade | uppercase}}</td>
+			</tr>
+		</table>
+	</div>
+	
+	<br>
+	<br>
+	<br><br>
+	
+	<h2>Index</h2>
+	<div ng-controller="pegarRespostaJson">
+		<table class="table-css">
+			<tr ng-repeat="x in lista">
+				<td>{{ $index + 1 }}</td> <!-- indice da tabela. Nota: $index por default é 0 (Zero) -->
+				<td>{{ x.nome }}</td>
+				<td>{{ x.cidade | uppercase}}</td>
+			</tr>
+		</table>
+	</div>
+	
+	<h2>Colorido</h2>
+	<div ng-controller="pegarRespostaJson">
+		<table class="table-css">
+			<tr ng-repeat="x in lista">
+				<td ng-if="$odd" style="background-color:lime">{{ x.nome }}</td> 
+				<td ng-if="$even">{{ x.nome }}</td>
+				<td ng-if="$odd" style="background-color:lime">{{ x.cidade }}</td> 
+				<td ng-if="$even">{{ x.cidade }}</td>
+			</tr>
+		</table>
+	</div>
+	
+<script type="text/javascript" src="../resources/static/angular/angular.min.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-route.js"></script>
+<!-- para este exemplo foi usado apenas o controller 'pegarRespostaJson' já existente no arquivo da aula de http-ajax-->
+<script type="text/javascript" src="../resources/script/controller-exemplo-http-ajax.js"></script>
+</body>
+</html>

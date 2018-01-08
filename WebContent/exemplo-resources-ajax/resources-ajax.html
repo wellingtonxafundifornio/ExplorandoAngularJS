@@ -1,0 +1,27 @@
+<!DOCTYPE html> <!-- link: http://localhost:8080/ExplorandoAngularJS/exemplo-resources-ajax/resources-ajax.html -->
+<html ng-app="loja"> 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body id="corpo" ng-controller="controllerPessoa">
+
+<input type="text" ng-value="100" ng-model="codPessoa">
+<hr>
+<button ng-click="getPorId();">Buscar por id</button>
+<hr>
+<button ng-click="getTodos();">Buscar Todos</button>
+<hr>
+<button ng-click="salvarPessoa();">Salvar Pessoa</button>
+<hr>
+<button ng-click="deletarPessoa();">Deletar Pessoa</button>
+<hr>
+<h1>{{ objetoPessoa }}</h1>
+
+<script type="text/javascript" src="../resources/static/angular/angular.min.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-route.js"></script>
+<script type="text/javascript" src="../resources/static/angular/angular-resource.js"></script>
+<script type="text/javascript" src="../resources/script/controller-exemplo-resource-ajax.js"></script> 
+</body>
+</html>
